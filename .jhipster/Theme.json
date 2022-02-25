@@ -1,0 +1,24 @@
+{
+  "applications": "*",
+  "changelogDate": "20220225161108",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "theme",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "nom",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Theme",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "no"
+}

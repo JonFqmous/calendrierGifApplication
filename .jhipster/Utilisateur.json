@@ -1,0 +1,47 @@
+{
+  "applications": "*",
+  "changelogDate": "20220225161107",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "utilisateur",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "nom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "prenom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nbPoint",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "dateHeureInscription",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Utilisateur",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "theme",
+      "otherEntityRelationshipName": "utilisateur",
+      "relationshipName": "theme",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}
