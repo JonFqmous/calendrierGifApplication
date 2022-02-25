@@ -1,0 +1,32 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="theme">
+      <h2 data-cy="themeDetailsHeading"><span jhiTranslate="calendrierGifApplicationApp.theme.detail.title">Theme</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="calendrierGifApplicationApp.theme.id">Id</span></dt>
+        <dd>
+          <span>{{ theme.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="calendrierGifApplicationApp.theme.nom">Nom</span></dt>
+        <dd>
+          <span>{{ theme.nom }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/theme', theme.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

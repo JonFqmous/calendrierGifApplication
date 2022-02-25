@@ -48,6 +48,8 @@ public class CacheConfiguration {
             createCache(cm, fr.jonathan.calendrier_gif.domain.User.class.getName());
             createCache(cm, fr.jonathan.calendrier_gif.domain.Authority.class.getName());
             createCache(cm, fr.jonathan.calendrier_gif.domain.User.class.getName() + ".authorities");
+            createCache(cm, fr.jonathan.calendrier_gif.domain.Utilisateur.class.getName());
+            createCache(cm, fr.jonathan.calendrier_gif.domain.Theme.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

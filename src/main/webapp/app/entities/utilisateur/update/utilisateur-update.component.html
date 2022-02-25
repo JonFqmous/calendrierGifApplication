@@ -1,0 +1,93 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-utilisateur-heading"
+        data-cy="UtilisateurCreateUpdateHeading"
+        jhiTranslate="calendrierGifApplicationApp.utilisateur.home.createOrEditLabel"
+      >
+        Create or edit a Utilisateur
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="calendrierGifApplicationApp.utilisateur.id" for="field_id">Id</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="calendrierGifApplicationApp.utilisateur.nom" for="field_nom">Nom</label>
+          <input type="text" class="form-control" name="nom" id="field_nom" data-cy="nom" formControlName="nom" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="calendrierGifApplicationApp.utilisateur.prenom" for="field_prenom">Prenom</label>
+          <input type="text" class="form-control" name="prenom" id="field_prenom" data-cy="prenom" formControlName="prenom" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="calendrierGifApplicationApp.utilisateur.nbPoint" for="field_nbPoint"
+            >Nb Point</label
+          >
+          <input type="number" class="form-control" name="nbPoint" id="field_nbPoint" data-cy="nbPoint" formControlName="nbPoint" />
+        </div>
+
+        <div class="form-group">
+          <label
+            class="form-control-label"
+            jhiTranslate="calendrierGifApplicationApp.utilisateur.dateHeureInscription"
+            for="field_dateHeureInscription"
+            >Date Heure Inscription</label
+          >
+          <div class="d-flex">
+            <input
+              id="field_dateHeureInscription"
+              data-cy="dateHeureInscription"
+              type="datetime-local"
+              class="form-control"
+              name="dateHeureInscription"
+              formControlName="dateHeureInscription"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="calendrierGifApplicationApp.utilisateur.email" for="field_email">Email</label>
+          <input type="text" class="form-control" name="email" id="field_email" data-cy="email" formControlName="email" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="calendrierGifApplicationApp.utilisateur.theme" for="field_theme">Theme</label>
+          <select class="form-control" id="field_theme" data-cy="theme" name="theme" formControlName="theme">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="themeOption.id === editForm.get('theme')!.value?.id ? editForm.get('theme')!.value : themeOption"
+              *ngFor="let themeOption of themesSharedCollection; trackBy: trackThemeById"
+            >
+              {{ themeOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
