@@ -1,0 +1,17 @@
+
+entity Utilisateur {
+	id Long
+    nom String
+    prenom String
+    nbPoint Int
+    dateHeureInscription LocalDateTime
+    email String
+}
+
+
+entity Theme {
+	id Long,
+	nom String
+	}
+
+relationship ManyToOne{Utilisateur{theme} to Theme}
